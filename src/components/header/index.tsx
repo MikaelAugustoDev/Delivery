@@ -122,7 +122,7 @@ const Header = () => {
                         <Item>Início</Item>
                     </LinkEditado>
                     <LinkEditado to="/cardapio">
-                        <Item>Hambúrguer</Item>
+                        <Item>Cardápio</Item>
                     </LinkEditado>
                     <LinkEditado to="/contato">
                         <Item>Contato</Item>

@@ -4,6 +4,7 @@ import { Logar } from "./login"
 import { Cadastrar } from "./cadastro"
 import { EsqueceuSenha } from "./esqueceuSenha"
 import { Contato } from "./contato"
+import { Cardapio } from "./cardapio"
 
 
 const AppRoutes = () => {
@@ -15,6 +16,7 @@ const AppRoutes = () => {
                 <Route path="/cadastro" element={ <Cadastrar/> }/>
                 <Route path="/esqueceuasenha" element={ <EsqueceuSenha/> }/>
                 <Route path="/contato" element={ <Contato/> }/>
+                <Route path="/cardapio" element={ <Cardapio/> }/>
             </Routes>
         </BrowserRouter>
     )
