@@ -30,7 +30,7 @@ const HamburguerMenu: React.FC = () => {
             <MenuWrapper isopen={isopen}>
                 <MenuItems>
 
-                    <LinkEdit to="/logar">
+                    <LinkEdit to="/login">
 
                         <Button>Fazer Login</Button>
 

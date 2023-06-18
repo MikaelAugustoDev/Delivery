@@ -128,7 +128,7 @@ const Header = () => {
                         <Item>Contato</Item>
                     </LinkEditado>
                 </ListItens>
-                <LinkEditadoButton to="/logar">
+                <LinkEditadoButton to="/login">
                     <Button>Fazer Login</Button>
                 </LinkEditadoButton>
             </Navigation>
