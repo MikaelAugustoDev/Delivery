@@ -3,6 +3,7 @@ import { Inicio } from "./home"
 import { Logar } from "./login"
 import { Cadastrar } from "./cadastro"
 import { EsqueceuSenha } from "./esqueceuSenha"
+import { Contato } from "./contato"
 
 
 const AppRoutes = () => {
@@ -13,6 +14,7 @@ const AppRoutes = () => {
                 <Route path="/login" element={ <Logar/> }/>
                 <Route path="/cadastro" element={ <Cadastrar/> }/>
                 <Route path="/esqueceuasenha" element={ <EsqueceuSenha/> }/>
+                <Route path="/contato" element={ <Contato/> }/>
             </Routes>
         </BrowserRouter>
     )
