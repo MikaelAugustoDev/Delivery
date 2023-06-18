@@ -36,20 +36,24 @@ const P = styled.p`
     width: 14%;
     text-align: center;
 
+    @media (max-width: 1024px) {
+        width: 19%; 
+    }
+
     @media (max-width: 768px) {
         width: 26%; 
     }
 
     @media (max-width: 425px) {
-        width: 50%; 
+        width: 55%; 
     }
 
     @media (max-width: 375px) {
-        width: 60%; 
+        width: 64%; 
     }
 
     @media (max-width: 320px) {
-        width: 70%; 
+        width: 78%; 
     }
 `;
 
@@ -66,7 +70,7 @@ const Form = styled.form`
     border-top: 1px solid #949494;
     border-bottom: 1px solid #949494;
     width: 40%;
-    height: 40%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -76,7 +80,7 @@ const Form = styled.form`
 
     @media (max-width: 768px) {
         width: 60%; 
-        height: 45%;
+        height: 55%;
     }
     
     @media (max-width: 425px) {
@@ -89,7 +93,7 @@ const Input = styled.input`
     height: 40px;
     background: #f0f0f0;
     border: none;
-    border-radius: 5px;
+    border-radius: 5ps;
     padding: 15px;
 
     &:focus {
@@ -133,57 +137,24 @@ const LinkSenha = styled(Link)`
     text-decoration: none;
 `;
 
-const BtnCadastrar = styled.button`
-    width: 100%;
-    height: 40px;
-    border: none;
-    border: 1px solid #FB9400;
-    background: none;
-    color: #FB9400;
-    font-size: 14px;
-    border-radius: 5px;
-    transition: 0.2s;
-
-    &:hover {
-        cursor: pointer;
-        transform: translate(-0.25rem,-0.25rem);
-        box-shadow: 0.25rem 0.25rem #c4c4c4;
-    }
-
-    &:active {
-        transform: translate(0);
-        box-shadow: none;
-    }
-`;
-
-const LinkEditado = styled(Link)`
-    text-decoration: none;
-    width: 24%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media (max-width: 1024px) {
-        width: 32%; 
-    }
-
-    @media (max-width: 768px) {
-        width: 48%; 
-    }
-
-    @media (max-width: 425px) {
-        width: 100%; 
-    }
-`;
-
 const PasswordToggle = styled.button`
     position: absolute;
-    top: 43%;
-    right: 50px;
+    top: 54%;
+    right: 60px;
     transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
+
+    @media (max-width: 1024px) {
+        top: 55%;
+        right: 50px;
+    }
+
+    @media (max-width: 768px) {
+        top: 56%;
+        right: 50px;
+    }
 
     @media (max-width: 425px) {
         right: 10px;
@@ -206,8 +177,8 @@ const LinkVoltar = styled(Link)`
     }
 `;
 
-const Logar = () => {
 
+const Cadastrar = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleShowPassword = () => {
@@ -234,8 +205,12 @@ const Logar = () => {
             )}
 
             <Logo>Mikael<Span>●</Span>Delivery</Logo>
-            <P>Use suas credenciais para realizar o login.</P>
+            <P>Preencha os campos para criar seu cadastro.</P>
             <Form>
+                <Input
+                    type="text"
+                    placeholder="Digite seu nome"
+                />
                 <Input
                     type="text"
                     placeholder="Digite seu e-mail"
@@ -247,14 +222,11 @@ const Logar = () => {
                 <PasswordToggle type="button" onClick={handleShowPassword}>
                     <img src={Eye} alt="Exibir senha" />
                 </PasswordToggle>
-                <BtnSubmit>Entrar</BtnSubmit>
-                <PSenha>Esqueceu sua senha? <LinkSenha to="/esqueciasenha">Clique aqui</LinkSenha></PSenha>
+                <BtnSubmit>Cadastrar</BtnSubmit>
+                <PSenha>Já tem cadastro? <LinkSenha to="/login">Fazer login</LinkSenha></PSenha>
             </Form>
-            <LinkEditado to="/cadastro">
-                <BtnCadastrar>Quero me Cadastrar</BtnCadastrar>
-            </LinkEditado>
         </Main>
     );
 };
 
-export { Logar };
+export { Cadastrar };
