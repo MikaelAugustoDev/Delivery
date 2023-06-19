@@ -1,36 +1,30 @@
 import { useParams } from "react-router-dom";
+import { HamburguerList } from "../../components/hamburguersList";
 
 interface Hamburguer {
-    id: string;
-    nome: string;
-    preco: number;
-    ingredientes: string;
-    imagem: string;
+  id: number;
+  nome: string;
+  preco: number;
+  ingredientes: string;
+  imagem: string;
 }
 
-interface Props {
-    hamburguers: Hamburguer[];
-}
+const HamburguerPage = () => {
+  const { id } = useParams();
+  const hamburguer: Hamburguer | undefined = HamburguerList.find((item) => item.id === parseInt(id as string));
 
-const HamburguerPage = ({ hamburguers }: Props) => {
+  if (!hamburguer) {
+    return <div>Hambúrguer não encontrado.</div>;
+  }
 
-    const { id } = useParams();
-
-    const hamburguer = hamburguers.find((hamburguer) => hamburguer.id === id);
-
-
-    if (!hamburguer) {
-        return <div>Este hambúrguer não existe.</div>;
-    }
-
-    return (
-        <>
-            <h2>{hamburguer.nome}</h2>
-            <p>Preço: R${hamburguer.preco}</p>
-            <p>Ingredientes: {hamburguer.ingredientes}</p>
-            <img src={hamburguer.imagem} alt={hamburguer.nome} />
-        </>
-    );
+  return (
+    <div>
+      <h2>{hamburguer.nome}</h2>
+      <p>Preço: R$ {hamburguer.preco}</p>
+      <p>Ingredientes: {hamburguer.ingredientes}</p>
+      {/* Exiba outras informações do hambúrguer aqui */}
+    </div>
+  );
 };
 
 export { HamburguerPage };

@@ -6,20 +6,21 @@ import { EsqueceuSenha } from "./esqueceuSenha"
 import { Contato } from "./contato"
 import { Cardapio } from "./cardapio"
 import { HamburguerPage } from "./hamburguerPage"
-import { HamburguerList } from "../components/hamburguersList"
+import { ScrollToTop } from "../components/scrollToTop"
 
 
 const AppRoutes = () => {
-    return(
+    return (
         <BrowserRouter>
+            <ScrollToTop />
             <Routes>
-                <Route path="/" element={ <Inicio/> }/>
-                <Route path="/login" element={ <Logar/> }/>
-                <Route path="/cadastro" element={ <Cadastrar/> }/>
-                <Route path="/esqueceuasenha" element={ <EsqueceuSenha/> }/>
-                <Route path="/contato" element={ <Contato/> }/>
-                <Route path="/cardapio" element={ <Cardapio/> }/>
-                <Route path="/cardapio/:id" element={ <HamburguerPage hamburguers={HamburguerList}/> }/>
+                <Route path="/" element={<Inicio />} />
+                <Route path="/login" element={<Logar />} />
+                <Route path="/cadastro" element={<Cadastrar />} />
+                <Route path="/esqueceuasenha" element={<EsqueceuSenha />} />
+                <Route path="/contato" element={<Contato />} />
+                <Route path="/cardapio" element={<Cardapio />} />
+                <Route path="/cardapio/:id" element={<HamburguerPage />} />
             </Routes>
         </BrowserRouter>
     )

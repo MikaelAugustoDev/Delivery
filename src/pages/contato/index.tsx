@@ -211,7 +211,7 @@ const Contato = () => {
         <Body>
             <Header />
             <Main>
-                <Title>Entre em contato com o suporte</Title>
+                <Title>Entre em contato conosco</Title>
                 <Form>
                     <Input 
                         type="text"
@@ -232,7 +232,7 @@ const Contato = () => {
                     <DivLinhas><SpanLinha></SpanLinha></DivLinhas>
                 </DivOption>
                 <DivRedes>
-                    <Title>Entre em contato pelas redes sociais</Title>
+                    <Title>Por meio das redes sociais</Title>
                     <RedesContato>
                         <A>
                             <WppEdit sx={{fontSize: 45, transition: "0.3s ease-in-out"}}/>

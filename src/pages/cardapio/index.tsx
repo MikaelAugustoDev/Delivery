@@ -63,9 +63,8 @@ const Cardapio = () => {
                 <P>O que deseja para hoje?</P>
                 <OpcoesCarpadio>
                     {hamburguers.map((hamburguer, index) => (
-                        <LinkBurguer to={`/cardapio/${hamburguer.id}`}>
+                        <LinkBurguer to={`/cardapio/${hamburguer.id} `} key={index}>
                             <CardHamburguer
-                                key={index}
                                 name={hamburguer.nome}
                                 valor={hamburguer.preco}
                                 image={hamburguer.imagem}
