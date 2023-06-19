@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
 import { Header } from "../../components/header";
-import { CardBurguer } from "../../components/cardHamburguer";
-import BurguerTwo from "../../assets/BurguerTexas.svg";
+import { CardHamburguer } from "../../components/cardHamburguer";
+import { Link } from "react-router-dom";
+import { HamburguerList } from "../../components/hamburguersList";
 
 const Body = styled.main`
     width: 100%;
@@ -42,21 +43,35 @@ const OpcoesCarpadio = styled.div`
     width: 100%;
     min-height: 60vh;
     margin-top: 40px;
+    display: flex;
+    gap: 40px;
+`;
+
+const LinkBurguer = styled(Link)`
+    text-decoration: none;
 `;
 
 const Cardapio = () => {
-    return(
+
+    const hamburguers = HamburguerList
+
+    return (
         <Body>
-            <Header/>
+            <Header />
             <Main>
                 <H2>Seja Bem-Vindo 👋🏻</H2>
                 <P>O que deseja para hoje?</P>
                 <OpcoesCarpadio>
-                    <CardBurguer
-                        image={BurguerTwo}
-                        name="Texas Burguer"
-                        valor="25,50"
-                    />
+                    {hamburguers.map((hamburguer, index) => (
+                        <LinkBurguer to={`/cardapio/${hamburguer.id}`}>
+                            <CardHamburguer
+                                key={index}
+                                name={hamburguer.nome}
+                                valor={hamburguer.preco}
+                                image={hamburguer.imagem}
+                            />
+                        </LinkBurguer>
+                    ))}
                 </OpcoesCarpadio>
             </Main>
         </Body>

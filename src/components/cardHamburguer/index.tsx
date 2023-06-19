@@ -1,10 +1,5 @@
 import { styled } from "styled-components";
 import { PropsBurguer } from "../../types/cardBurguer";
-import { Link } from "react-router-dom";
-
-const LinkBurguer = styled(Link)`
-    text-decoration: none;
-`;
 
 const Card = styled.div`
     width: 260px;
@@ -53,20 +48,19 @@ const ImgBurguer = styled.img`
     width: 150px;
 `;
 
-const CardBurguer = (props: PropsBurguer) => {
-    return(
-        <LinkBurguer to="/cardapio/hamburguertexas">
-            <Card>
-                <DivImage>
-                    <ImgBurguer src={props.image}/>
-                </DivImage>
-                <DivTexts>
-                    <Name>{props.name}</Name>
-                    <Preco>R$ {props.valor}</Preco>
-                </DivTexts>
-            </Card>
-        </LinkBurguer>
+const CardHamburguer = (props: PropsBurguer) => {
+    return (
+
+        <Card>
+            <DivImage>
+                <ImgBurguer src={props.image} />
+            </DivImage>
+            <DivTexts>
+                <Name>{props.name}</Name>
+                <Preco>R$ {props.valor}</Preco>
+            </DivTexts>
+        </Card>
     );
 };
 
-export { CardBurguer };
+export { CardHamburguer };

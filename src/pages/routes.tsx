@@ -5,6 +5,8 @@ import { Cadastrar } from "./cadastro"
 import { EsqueceuSenha } from "./esqueceuSenha"
 import { Contato } from "./contato"
 import { Cardapio } from "./cardapio"
+import { HamburguerPage } from "./hamburguerPage"
+import { HamburguerList } from "../components/hamburguersList"
 
 
 const AppRoutes = () => {
@@ -17,6 +19,7 @@ const AppRoutes = () => {
                 <Route path="/esqueceuasenha" element={ <EsqueceuSenha/> }/>
                 <Route path="/contato" element={ <Contato/> }/>
                 <Route path="/cardapio" element={ <Cardapio/> }/>
+                <Route path="/cardapio/:id" element={ <HamburguerPage hamburguers={HamburguerList}/> }/>
             </Routes>
         </BrowserRouter>
     )

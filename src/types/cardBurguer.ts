@@ -1,7 +1,7 @@
 type PropsBurguer = {
     name: string,
-    valor: string,
-    image: string,
+    valor: number,
+    image: any,
     promocao?: string
 }
 
