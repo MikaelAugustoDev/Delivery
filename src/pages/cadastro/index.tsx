@@ -184,6 +184,11 @@ const LinkVoltar = styled(Link)`
 
 const Cadastrar = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const [formValues, setFormValues] = useState({
+        nome: "",
+        email: "",
+        password: ""
+      });
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
@@ -195,6 +200,28 @@ const Cadastrar = () => {
     const voltarParaRotaAnterior = () => {
         navigate(-1);
     };
+
+    const handleForm = (event: any) => {
+        event.preventDefault()
+    }
+
+    const handleInputChange = (event: any) => {
+        const { name, value } = event.target;
+        setFormValues((prevValues) => ({
+          ...prevValues,
+          [name]: value
+        }));
+      };
+
+    const handleClick = () => {
+        const { nome, email, password } = formValues;
+
+        if (nome && email && password) {
+          navigate("/login");
+        } else {
+          alert("Por favor, preencha todos os campos");
+        }
+    }
 
     return (
         <Main>
@@ -210,23 +237,32 @@ const Cadastrar = () => {
 
             <Logo>Mikael<Span>●</Span>Delivery</Logo>
             <P>Preencha os campos para criar seu cadastro.</P>
-            <Form>
+            <Form onSubmit={handleForm}>
                 <Input
                     type="text"
+                    name="nome"
                     placeholder="Digite seu nome"
+                    value={formValues.nome}
+                    onChange={handleInputChange}
                 />
                 <Input
-                    type="text"
+                    type="email"
+                    name="email"
                     placeholder="Digite seu e-mail"
+                    value={formValues.email}
+                    onChange={handleInputChange}
                 />
                 <Input
                     type={showPassword ? "text" : "password"}
+                    name="password"
                     placeholder="Digite sua senha"
+                    value={formValues.password}
+                    onChange={handleInputChange}
                 />
                 <PasswordToggle type="button" onClick={handleShowPassword}>
                     <img src={Eye} alt="Exibir senha" />
                 </PasswordToggle>
-                <BtnSubmit>Cadastrar</BtnSubmit>
+                <BtnSubmit onClick={handleClick}>Cadastrar</BtnSubmit>
                 <PSenha>Já tem cadastro? <LinkSenha to="/login">Fazer login</LinkSenha></PSenha>
             </Form>
         </Main>
