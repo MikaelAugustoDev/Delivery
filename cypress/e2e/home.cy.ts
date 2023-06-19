@@ -1,4 +1,3 @@
-
 describe("Testando a pagina Home", () => {
     it("Redirecionando para a rota Cardapio", () => {
         cy.visit("/");
@@ -35,12 +34,26 @@ describe("Testando Rotas relacionadas a Cadastro e Login", () => {
         cy.visit("/login");
         cy.contains("Quero me Cadastrar").click();
         cy.url().should("include", "/cadastro");
-        cy.get(".sc-fGZLLs > img").click();
-        cy.url().should("include", "/login");
     })
 
     it("Existe um botao de Entrar no meu Login?", () => {
         cy.visit("/cadastro");
         cy.contains("Cadastrar")
+    })
+
+    it("A seta de voltar redireciona de volta para a rota anterior?", () => {
+        cy.visit("/");
+        cy.contains("Fazer Login").click();
+        cy.url().should("include", "/login");
+        cy.contains("Quero me Cadastrar").click();
+        cy.url().should("include", "/cadastro");
+        cy.get(".sc-fGZLLs > img").click();
+        cy.url().should("include", "/login");
+        cy.contains("Clique aqui").click();
+        cy.url().should("include", "/esqueceuasenha");
+        cy.get("img").click();
+        cy.url().should("include", "/login");
+        cy.get(".sc-aklqw > img").click();
+        cy.url().should("include", "/");
     })
 }) 

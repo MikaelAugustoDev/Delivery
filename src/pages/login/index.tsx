@@ -195,6 +195,10 @@ const LinkVoltar = styled(Link)`
     top: 10%;
     left: 20%;
 
+    &[data-testid="link-voltar"] {
+        color: #FB9400;
+    }
+
     @media (max-width: 425px) {
         top: 5%;
         left: 10%;
