@@ -7,6 +7,7 @@ import { Contato } from "./contato"
 import { Cardapio } from "./cardapio"
 import { HamburguerPage } from "./hamburguerPage"
 import { ScrollToTop } from "../components/scrollToTop"
+import { Sacola } from "./sacola"
 
 
 const AppRoutes = () => {
@@ -21,6 +22,7 @@ const AppRoutes = () => {
                 <Route path="/contato" element={<Contato />} />
                 <Route path="/cardapio" element={<Cardapio />} />
                 <Route path="/cardapio/:id" element={<HamburguerPage />} />
+                <Route path="/cardapio/sacola" element={<Sacola/>} />
             </Routes>
         </BrowserRouter>
     )
