@@ -12,12 +12,6 @@ const Body = styled.main`
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
-  @media (max-width: 768px) {
-      padding: 0 50px;
-  }
-  @media (max-width: 425px) {
-      padding: 0 20px;
-  }
 `;
 
 const DivFundoAmarelo = styled.div`
@@ -35,6 +29,16 @@ const DivInfoBurguer = styled.div`
   flex-direction: column;
   gap: 20px;
   margin-bottom: 50px;
+
+  @media (max-width: 425px) {
+    align-items: flex-start;
+    padding: 0 25px
+  }
+
+  @media (max-width: 320px) {
+    align-items: flex-start;
+    padding: 0 15px
+  }
 `;
 
 const ImageBurguer = styled.img`
@@ -42,24 +46,83 @@ const ImageBurguer = styled.img`
   position: absolute;
   top: 2%;
   left: 35%;
+
+  @media (max-width: 1024px) {
+    top: -30px;
+    left: 30%;
+  }
+
+  @media (max-width: 768px) {
+    left: 23%;
+  }
+
+  @media (max-width: 425px) {
+    width: 300px;
+    top: 5%;
+    left: 12%;
+  }
+
+  @media (max-width: 375px) {
+    top: 3%;
+    left: 8%;
+  }
+
+  @media (max-width: 375px) {
+    left: 2%;
+  }
 `;
 
 const NameBurguer = styled.h1`
   color: #1B1B1B;
   font-size: 40px;
   margin-top: 100px;
+
+  @media (max-width: 425px) {
+    margin-top: 60px;
+    font-size: 30px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 28px;
+  }
 `;
 
 const IngredienteBurguer = styled.p`
   color: rgba(27, 27, 27, 0.5);
   width: 40%;
   text-align: center;
+
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+
+  @media (max-width: 425px) {
+    width: 90%;
+    text-align: left;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    text-align: left;
+  }
 `;
 
 const QuantidadeBurguer = styled.div`
   display: flex;
   width: 40%;
-  height: 50px;
+  height: 60px;
+
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+  }
 `;
 
 const ContadorDiv = styled.div`
@@ -69,10 +132,37 @@ const ContadorDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 `
 
 const TitleContador = styled.p`
   color: #1B1B1B;
+  position: absolute;
+  left: 37%;
+  top: 74%;
+
+  @media (max-width: 1024px) {
+    left: 36%;
+    top: 73%;
+  }
+
+  @media (max-width: 768px) {
+    left: 27%;
+  }
+
+  @media (max-width: 425px) {
+    left: 18%;
+    top: 72%;
+  }
+
+  @media (max-width: 375px) {
+    left: 17%;
+    top: 71%;
+  }
+
+  @media (max-width: 320px) {
+    left: 14%;
+  }
 `;
 
 const ButtonAdd = styled.button`
@@ -95,7 +185,7 @@ const ButtonAdd = styled.button`
 const Buttons = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 5px;
+  margin-top: 0px;
   justify-content: center;
 `;
 
@@ -120,6 +210,7 @@ const PrecoDiv = styled.div`
 const PrecoBurguer = styled.p`
   color: #FB9400;
   font-size: 28px;
+  font-weight: 500;
 `;
 
 const ButtonAddSacola = styled.button`
@@ -141,6 +232,18 @@ const ButtonAddSacola = styled.button`
   &:active {
     transform: translate(0);
     box-shadow: none;
+  }
+
+  @media (max-width: 425px) {
+    width: 380px;
+  }
+
+  @media (max-width: 375px) {
+    width: 325px;
+  }
+
+  @media (max-width: 320px) {
+    width: 270px;
   }
 `;
 
@@ -206,8 +309,8 @@ const HamburguerPage = () => {
         <NameBurguer>{hamburguer.nome}</NameBurguer>
         <IngredienteBurguer>{hamburguer.ingredientes}</IngredienteBurguer>
         <QuantidadeBurguer>
+          <TitleContador>Quantidade</TitleContador>
           <ContadorDiv>
-            <TitleContador>Quantidade</TitleContador>
             <Buttons>
               <ButtonAdd onClick={handleSubtrair}>-</ButtonAdd>
               <NumberQuantidade>{quantidade}</NumberQuantidade>

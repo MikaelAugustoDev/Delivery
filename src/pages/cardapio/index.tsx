@@ -9,7 +9,7 @@ const Body = styled.main`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 0 100px;
+    padding: 0 80px;
     position: relative;
     overflow-x: hidden;
 
@@ -44,7 +44,10 @@ const OpcoesCarpadio = styled.div`
     min-height: 60vh;
     margin-top: 40px;
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
 `;
 
 const LinkBurguer = styled(Link)`
