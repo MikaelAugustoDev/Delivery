@@ -6,3 +6,11 @@ type PropsBurguer = {
 }
 
 export type { PropsBurguer };
+
+export interface Hamburguer {
+    id: number;
+    nome: string;
+    preco: number;
+    ingredientes: string;
+    imagem: string;
+}

@@ -34,7 +34,7 @@ const DivTexts = styled.div`
 
 const Name = styled.h3`
     color: #1B1B1B;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
 `;
 
