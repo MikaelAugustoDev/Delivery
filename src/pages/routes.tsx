@@ -8,6 +8,8 @@ import { Cardapio } from "./cardapio"
 import { HamburguerPage } from "./hamburguerPage"
 import { ScrollToTop } from "../components/scrollToTop"
 import { Sacola } from "./sacola"
+import { Entrega } from "./entrega"
+import { Pedido } from "./pedido"
 
 
 const AppRoutes = () => {
@@ -23,6 +25,8 @@ const AppRoutes = () => {
                 <Route path="/cardapio" element={<Cardapio />} />
                 <Route path="/cardapio/:id" element={<HamburguerPage />} />
                 <Route path="/cardapio/sacola" element={<Sacola/>} />
+                <Route path="/pedido" element={<Pedido/>} />
+                <Route path="/pedido/entrega" element={<Entrega/>} />
             </Routes>
         </BrowserRouter>
     )
